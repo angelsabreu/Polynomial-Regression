@@ -58,3 +58,33 @@ print("Predicted Distances: ", predictions)
 new_time = 6
 new_prediction = weight * (new_time ** 2)
 print(f"Distance fallen after {new_time} seconds: {new_prediction} meters")
+
+
+# A striker’s goal tally usually has a steady relationship with how many shots they get on 
+# target. A coach tracks an academy striker across 4 matches:
+
+# Shots on Target (x) | Goals Scored (y)
+# 2                     | 1
+# 4                     | 2
+# 6                     | 3
+# 8                     | 4
+
+# Every 2 shots on target yields 1 goal:
+
+# Goals = 0.5 * Shots
+
+# Task:
+# Predict how many goals the striker will score if they register 10 shots on target.
+
+shots_on_target = [2, 4, 6, 8]
+goals_scored = [1, 2, 3, 4]
+goals = [0.5 * shots for shots in shots_on_target]
+print("Predicted Goals for Shots on Target:", goals)
+
+weight = 0.5
+predictions = [weight *shots for shots in shots_on_target]
+print("Predicted Goals: ", predictions)
+
+new_shots = 10
+new_prediction = weight * new_shots
+print(f"Predicted goals for {new_shots} shots on target: {new_prediction}")
